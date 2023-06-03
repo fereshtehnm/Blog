@@ -1,0 +1,47 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.header {
+  position: absolute;
+  height: 45rem;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-image: url('../pics/header.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  color: white;
+}
+
+.navbar {
+  text-align: right;
+  height: 3.5rem;
+  width: 100%;
+  position: relative;
+}
+
+.navbar li {
+  display: inline-block;
+  list-style: none;
+  padding: 1.5rem 1rem 0.2rem 1rem;
+}
+
+.navbar a {
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+
+.navbar li:hover {
+  background-color: #ffdcf768;
+}
+
+.navbar a:hover {
+  color: black;
+}
+.headerDiv {
+  align-items: left;
+}
+.text {
+  align-items: left;
+}
