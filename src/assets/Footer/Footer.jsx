@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer(props) {
   return (
-    <footer  data-theme="retro" className="footer footer-center p-10 text-base-content rounded">
+    <footer data-theme="retro" className="footer footer-center p-10 text-base-content rounded">
       <div className="grid grid-flow-col gap-4">
         <a className="link link-hover">About us</a>
         <a className="link link-hover">Contact</a>

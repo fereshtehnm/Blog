@@ -9,10 +9,11 @@ module.exports = {
   theme: {
     extend: {},
   },
+  mode: 'jit',
   plugins: [
     daisyui,
   ],
   daisyui: {
-    themes: ['luxury', 'retro'],
+    themes: ['luxury', 'retro', 'autumn'],
   },
 };

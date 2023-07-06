@@ -2,13 +2,13 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-.header {
+/* .header {
   position: absolute;
   height: 45rem;
   top: 0;
   left: 0;
   width: 100%;
-  background-image: url('../pics/header.jpg');
+  background-image: url('../../../public/pics/header.jpg');
   background-attachment: fixed;
   background-size: cover;
   color: white;
@@ -44,4 +44,4 @@
 }
 .text {
   align-items: left;
-}
+} */
