@@ -44,7 +44,7 @@ export default function Main(props) {
 
       <h2 id="posts-header">Posts</h2>
       <div className="flex flex-wrap text-center items-center" data-theme="retro">
-        <Posts items={props.items} />
+        <Posts posts={props.posts} cats={props.cats} />
       </div>
 
     </div>

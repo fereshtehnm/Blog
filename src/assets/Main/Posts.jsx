@@ -1,35 +1,40 @@
 import React, { useState } from "react"
 import PostsFilter from "./PostsFilter"
-import Post from "./Post"
-import Card from "./UI/Card"
-
+import PostList from "./PostList"
 
 const Posts = (props) => {
-    // const { items } = props
-    // // Access the data from the 'items' prop
-    // const posts = items.posts
-    // // const categories = items.categories
-    // console.log(posts)
-
-    const [filteredCategory, setFilteredCategory] = useState('Classic');
+    const [filteredCategory, setFilteredCategory] = useState('All');
 
     const filterChangeHandler = selectedCategory => {
-        setFilteredCategory(selectedCategory);
-    };
-  
-    // const filteredPosts = props.items.filter(expense => {
-    //   return expense.date.getFullYear().toString() === filteredCategory
-    // })
+      setFilteredCategory(selectedCategory)
+    }
+
+    function filteredPosts(selector) {
+      const filteredArray = []; // Initialize an empty array
+
+      for (let i = 0; i < props.posts.length; i++) {
+        const post = props.posts[i];
+        for (let j = 0; j < post.category.length; j++) {
+          const category = post.category[j];
+          if (category.id == selector) {
+            filteredArray.push(post); // Push the matching post to the array
+          }
+        }
+      }
+      return filteredArray
+    }
+
+
     return (
-        // props.items.posts.map((postList) => (
-        //     <Post  key={postList.id} title={postList.title} text={postList.body}  />
-        // )) 
+      <>
         <PostsFilter
           selected={filteredCategory}
           onChangeFilter={filterChangeHandler}
-          options={props.items.categories}
+          categories={props.cats}
         />
-        /* <ExpensesList items={filteredExpenses} /> */
+        {/* {console.log(filteredPosts(filteredCategory))} */}
+        <PostList items={filteredPosts(filteredCategory)} />
+        </>
     )
 }
 
