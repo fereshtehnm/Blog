@@ -6,7 +6,7 @@ import Footer from './assets/Footer/Footer'
 //API
 import axios from 'axios'
 import './App.css'
-
+import * as data from "./tt.json"
 // const DUMMY_EXPENSES = [
 //   {
 //       id: 'e1',
@@ -41,48 +41,26 @@ import './App.css'
 // ]
 
 function App() {
-  
-  const [postFlag, setPostFlag] = useState(false);
-  const [categoryFlag, setCatFlag] = useState(false);
 
-  const [postsAPI, setPosts] = useState([])
-  const [categoriesAPI, setCategories] = useState([])
-
-  const getPosts = () => {
-    axios.get('http://192.168.1.54:8000/api/get_post')
-    .then((response) => {
-      const myPosts = response.data
-      setPosts(myPosts)
-      setPostFlag(true)
-    })
-    .catch(error => console.error(`Error: ${error}`))
-  }
-  const getCategories = () => {
-    axios.get('http://192.168.1.54:8000/api/get_category')
-    .then((response) => {
-      const myCats = response.data
-      setCategories(myCats)
-      setCatFlag(true)
-    })
-    .catch(error => console.error(`Error: ${error}`))
-  }
-  useEffect(() => {
-    getPosts(),
-    getCategories()
-  }, [])
+  const posts = data.posts
+  const cats = data.cats
+  console.log(posts);
 
   return (
     <div>
-    {postFlag & categoryFlag ? (
-      <div className="App" >
-        <Header title="My header" subtitle="subtitle2" />
-        <Main message="My content" posts={postsAPI} cats={categoriesAPI} />  
-        <Footer title="My header" subtitle="subtitle2" />
-      </div>
-    ) : (
-      <h1>Loading...</h1>
-    )}
-  </div>
+      {posts ? (
+        <div className="App" >
+          <Header title="My header" subtitle="subtitle2" />
+          <Main message="My content" posts={posts} cats={cats} />
+          <Footer title="My header" subtitle="subtitle2" />
+        </div>
+      ) : (
+        <div className='flex justify-center items-center py-36'>
+          <span className="loading loading-ball loading-md"></span>
+          <h1 className=''>Loading...</h1>
+        </div>
+      )}
+    </div>
   )
 }
 

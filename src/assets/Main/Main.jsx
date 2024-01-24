@@ -39,7 +39,7 @@ export default function Main(props) {
 
       <h2 id="posts-header">Add Post</h2>
       <div>
-        <AddPost></AddPost>
+        <AddPost/>
       </div>
 
       <h2 id="posts-header">Posts</h2>

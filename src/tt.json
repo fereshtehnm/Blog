@@ -1,0 +1,11 @@
+{
+  "posts": [
+    { "id": "1001", "title": "Regular", "text": "vhcyu" },
+    { "id": "1002", "title": "Chocolate", "text": "fhr" },
+    { "id": "1003", "title": "Blueberry", "text": "dfhdh" },
+    { "id": "1004", "title": "Devil's Food", "text": "drhdy" }
+  ],
+  "cats": {
+    
+  }
+}
